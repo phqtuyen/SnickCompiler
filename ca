@@ -1,0 +1,754 @@
+20
+88
+
+======symbol table=======
+input_1 0 0 int simple_declaration false--
+input_2 1 1 float simple_declaration false--
+input_3 2 2 bool simple_declaration false--
+a 3 3 int simple_declaration false--
+b 4 4 float simple_declaration false--
+c 5 5 bool simple_declaration false--
+a 0 19 int array_process false--
+b 20 107 int array_process false--
+a 0 0 bool logic_operation false--
+a 0 0 int if_else false--
+j 1 1 int if_else false--
+i 0 0 int do_while false--
+j 1 1 int do_while false--
+x 0 0 int read_inputs false--
+y 1 1 int read_inputs false--
+sum 2 2 int read_inputs false--
+a 0 0 int test_ref true--
+b 1 1 int test_ref true--
+a 0 0 int main false--
+b 1 1 int main false--
+expecting_val 0 0 int assert_int false--
+value 1 1 int assert_int false--
+expecting_val 0 0 float assert_float false--
+value 1 1 float assert_float false--
+expecting_val 0 0 bool assert_bool false--
+value 1 1 bool assert_bool false--
+expecting_val 0 0 bool write_bool false--
+
+======proc table=======
+simple_declaration 6--
+array_process 108--
+math_operation 0--
+logic_operation 1--
+if_else 2--
+do_while 2--
+read_inputs 3--
+test_ref 2--
+main 2--
+assert_int 2--
+assert_float 2--
+assert_bool 2--
+write_bool 1--
+call proc_main
+halt
+runerror:
+string_const r0, "divide by 0."
+call_builtin print_string
+halt
+proc_simple_declaration:
+# prologue
+push_stack_frame 6
+store 0, r0
+store 1, r1
+store 2, r2
+# variable declarations
+int_const r0, 0
+store 3, r0
+real_const r0, 0.0
+store 4, r0
+int_const r0, 0
+store 5, r0
+# assignment
+load r0, 0
+store 3, r0
+# call
+load r0, 0
+load r1, 3
+call proc_assert_int
+# assignment
+load r0, 1
+store 4, r0
+# call
+load r0, 1
+load r1, 4
+call proc_assert_float
+# assignment
+load r0, 2
+store 5, r0
+# call
+load r0, 2
+load r1, 5
+call proc_assert_bool
+# assignment
+int_const r0, 20
+int_to_real r0, r0
+store 4, r0
+# call
+real_const r0, 20.000000
+load r1, 4
+call proc_assert_float
+# epilogue
+pop_stack_frame 6
+return
+proc_array_process:
+# prologue
+push_stack_frame 108
+# variable declarations
+int_const r0, 0
+store 0, r0
+store 1, r0
+store 2, r0
+store 3, r0
+store 4, r0
+store 5, r0
+store 6, r0
+store 7, r0
+store 8, r0
+store 9, r0
+store 10, r0
+store 11, r0
+store 12, r0
+store 13, r0
+store 14, r0
+store 15, r0
+store 16, r0
+store 17, r0
+store 18, r0
+store 19, r0
+int_const r0, 0
+store 20, r0
+store 21, r0
+store 22, r0
+store 23, r0
+store 24, r0
+store 25, r0
+store 26, r0
+store 27, r0
+store 28, r0
+store 29, r0
+store 30, r0
+store 31, r0
+store 32, r0
+store 33, r0
+store 34, r0
+store 35, r0
+store 36, r0
+store 37, r0
+store 38, r0
+store 39, r0
+store 40, r0
+store 41, r0
+store 42, r0
+store 43, r0
+store 44, r0
+store 45, r0
+store 46, r0
+store 47, r0
+store 48, r0
+store 49, r0
+store 50, r0
+store 51, r0
+store 52, r0
+store 53, r0
+store 54, r0
+store 55, r0
+store 56, r0
+store 57, r0
+store 58, r0
+store 59, r0
+store 60, r0
+store 61, r0
+store 62, r0
+store 63, r0
+store 64, r0
+store 65, r0
+store 66, r0
+store 67, r0
+store 68, r0
+store 69, r0
+store 70, r0
+store 71, r0
+store 72, r0
+store 73, r0
+store 74, r0
+store 75, r0
+store 76, r0
+store 77, r0
+store 78, r0
+store 79, r0
+store 80, r0
+store 81, r0
+store 82, r0
+store 83, r0
+store 84, r0
+store 85, r0
+store 86, r0
+store 87, r0
+store 88, r0
+store 89, r0
+store 90, r0
+store 91, r0
+store 92, r0
+store 93, r0
+store 94, r0
+store 95, r0
+store 96, r0
+store 97, r0
+store 98, r0
+store 99, r0
+store 100, r0
+store 101, r0
+store 102, r0
+store 103, r0
+store 104, r0
+store 105, r0
+store 106, r0
+store 107, r0
+# assignment
+int_const r0, 20
+int_const r1, 2
+int_const r2, 1
+sub_int r1, r1, r2
+load_address r2, 0
+sub_offset r1, r2, r1
+store_indirect r1, r0
+# assignment
+int_const r0, 30
+int_const r1, 0
+int_const r2, 0
+int_const r3, 29
+int_const r4, 2
+int_const r5, 5
+mul_int r1, r1, r3
+add_int r1, r1, r5
+mul_int r2, r2, r3
+add_int r2, r2, r4
+int_const r3, 38
+int_const r4, 3
+int_const r5, 20
+mul_int r1, r1, r3
+add_int r1, r1, r5
+mul_int r2, r2, r3
+add_int r2, r2, r4
+sub_int r1, r1, r2
+load_address r2, 20
+sub_offset r1, r2, r1
+store_indirect r1, r0
+# assignment
+int_const r0, 0
+int_const r1, 0
+int_const r2, 29
+int_const r3, 2
+int_const r4, 5
+mul_int r0, r0, r2
+add_int r0, r0, r4
+mul_int r1, r1, r2
+add_int r1, r1, r3
+int_const r2, 38
+int_const r3, 3
+int_const r4, 22
+mul_int r0, r0, r2
+add_int r0, r0, r4
+mul_int r1, r1, r2
+add_int r1, r1, r3
+sub_int r0, r0, r1
+load_address r1, 20
+sub_offset r1, r1, r0
+load_indirect r0, r1
+int_const r1, 3
+int_const r2, 1
+sub_int r1, r1, r2
+load_address r2, 0
+sub_offset r1, r2, r1
+store_indirect r1, r0
+# call
+int_const r0, 0
+int_const r1, 3
+int_const r2, 1
+sub_int r1, r1, r2
+load_address r2, 0
+sub_offset r1, r2, r1
+load_indirect r2, r1
+call proc_assert_int
+# assignment
+int_const r0, 0
+int_const r1, 0
+int_const r2, 29
+int_const r3, 2
+int_const r4, 5
+mul_int r0, r0, r2
+add_int r0, r0, r4
+mul_int r1, r1, r2
+add_int r1, r1, r3
+int_const r2, 38
+int_const r3, 3
+int_const r4, 20
+mul_int r0, r0, r2
+add_int r0, r0, r4
+mul_int r1, r1, r2
+add_int r1, r1, r3
+sub_int r0, r0, r1
+load_address r1, 20
+sub_offset r1, r1, r0
+load_indirect r0, r1
+int_const r1, 4
+int_const r2, 1
+sub_int r1, r1, r2
+load_address r2, 0
+sub_offset r1, r2, r1
+store_indirect r1, r0
+# call
+int_const r0, 30
+int_const r1, 4
+int_const r2, 1
+sub_int r1, r1, r2
+load_address r2, 0
+sub_offset r1, r2, r1
+load_indirect r2, r1
+call proc_assert_int
+# epilogue
+pop_stack_frame 108
+return
+proc_math_operation:
+# prologue
+push_stack_frame 0
+# call
+int_const r0, 3
+int_const r1, 4
+add_int r0, r0, r1
+int_const r1, 7
+call proc_assert_int
+# call
+int_const r0, 3
+int_const r1, 4
+sub_int r0, r0, r1
+int_const r1, -1
+call proc_assert_int
+# call
+int_const r0, 3
+int_const r1, 4
+sub_int r0, r0, r1
+int_const r1, 0
+sub_int r0, r1, r0
+int_const r1, 1
+call proc_assert_int
+# call
+int_const r0, 3
+int_const r1, 4
+mul_int r0, r0, r1
+int_const r1, 12
+call proc_assert_int
+# call
+int_const r0, 3
+int_const r1, 4
+int_const r2, 0
+cmp_eq_int r2, r2, r1
+branch_on_true r2, runerror
+div_int r0, r0, r1
+int_const r1, 0
+call proc_assert_int
+# call
+real_const r0, 3.000000
+real_const r1, 4.000000
+real_const r2, 0.0
+cmp_eq_real r2, r2, r1
+branch_on_true r2, runerror
+div_real r0, r0, r1
+real_const r1, 0.750000
+call proc_assert_float
+# call
+real_const r0, 3.000000
+int_const r1, 4
+int_const r2, 0
+cmp_eq_int r2, r2, r1
+branch_on_true r2, runerror
+int_to_real r1, r1
+div_real r0, r0, r1
+real_const r1, 0.750000
+call proc_assert_float
+# call
+int_const r0, 3
+real_const r1, 4.000000
+real_const r2, 0.0
+cmp_eq_real r2, r2, r1
+branch_on_true r2, runerror
+int_to_real r0, r0
+div_real r0, r0, r1
+real_const r1, 0.750000
+call proc_assert_float
+# call
+int_const r0, 3
+int_const r1, 4
+int_const r2, 2
+mul_int r1, r1, r2
+add_int r0, r0, r1
+int_const r1, 11
+call proc_assert_int
+# call
+int_const r0, 3
+int_const r1, 4
+int_const r2, 2
+mul_int r1, r1, r2
+sub_int r0, r0, r1
+int_const r1, -5
+call proc_assert_int
+# epilogue
+pop_stack_frame 0
+return
+proc_logic_operation:
+# prologue
+push_stack_frame 1
+# variable declarations
+int_const r0, 0
+store 0, r0
+# call
+int_const r0, 0
+load r1, 0
+call proc_assert_bool
+# call
+int_const r0, 1
+int_const r1, 1
+int_const r2, 1
+and r1, r1, r2
+call proc_assert_bool
+# call
+int_const r0, 0
+int_const r1, 1
+int_const r2, 0
+and r1, r1, r2
+call proc_assert_bool
+# call
+int_const r0, 1
+int_const r1, 1
+int_const r2, 0
+int_const r3, 1
+and r2, r2, r3
+or r1, r1, r2
+call proc_assert_bool
+# epilogue
+pop_stack_frame 1
+return
+proc_if_else:
+# prologue
+push_stack_frame 2
+# variable declarations
+int_const r0, 0
+store 0, r0
+int_const r0, 0
+store 1, r0
+# assignment
+int_const r0, 20
+store 1, r0
+# if
+load r0, 0
+int_const r1, 0
+cmp_eq_int r0, r0, r1
+load r1, 1
+int_const r2, 20
+cmp_eq_int r1, r1, r2
+and r0, r0, r1
+branch_on_false r0, label1else
+# assignment
+int_const r0, 10
+store 0, r0
+# if
+load r0, 0
+int_const r1, 5
+cmp_lt_int r0, r0, r1
+branch_on_false r0, label2else
+# assignment
+int_const r0, 20
+store 0, r0
+branch_uncond label2after
+label2else:
+# assignment
+int_const r0, 50
+store 0, r0
+# if
+load r0, 0
+int_const r1, 30
+cmp_lt_int r0, r0, r1
+branch_on_false r0, label3else
+# assignment
+int_const r0, 40
+store 0, r0
+branch_uncond label3after
+label3else:
+# assignment
+int_const r0, 555
+store 0, r0
+# write
+string_const r0, "Correct IF-ELSE\n"
+call_builtin print_string
+label3after:
+label2after:
+branch_uncond label1after
+label1else:
+# assignment
+int_const r0, 20
+store 0, r0
+label1after:
+# call
+int_const r0, 555
+load r1, 0
+call proc_assert_int
+# epilogue
+pop_stack_frame 2
+return
+proc_do_while:
+# prologue
+push_stack_frame 2
+# variable declarations
+int_const r0, 0
+store 0, r0
+int_const r0, 0
+store 1, r0
+# assignment
+int_const r0, 0
+store 0, r0
+# assignment
+int_const r0, 1
+store 1, r0
+# while
+label4cond:
+load r0, 0
+int_const r1, 5
+cmp_lt_int r0, r0, r1
+branch_on_false r0, label4after
+# assignment
+load r0, 0
+int_const r1, 1
+add_int r0, r0, r1
+store 0, r0
+# while
+label5cond:
+load r0, 1
+int_const r1, 5
+cmp_lt_int r0, r0, r1
+branch_on_false r0, label5after
+# assignment
+load r0, 1
+int_const r1, 1
+add_int r0, r0, r1
+store 1, r0
+branch_uncond label5cond
+label5after:
+# assignment
+int_const r0, 0
+store 1, r0
+branch_uncond label4cond
+label4after:
+# call
+int_const r0, 5
+load r1, 0
+call proc_assert_int
+# call
+int_const r0, 0
+load r1, 1
+call proc_assert_int
+# epilogue
+pop_stack_frame 2
+return
+proc_read_inputs:
+# prologue
+push_stack_frame 3
+# variable declarations
+int_const r0, 0
+store 0, r0
+int_const r0, 0
+store 1, r0
+int_const r0, 0
+store 2, r0
+# write
+string_const r0, "Input two positive integers to be added up: "
+call_builtin print_string
+# read
+call_builtin read_int
+store 0, r0
+# read
+call_builtin read_int
+store 1, r0
+# write
+string_const r0, "\n"
+call_builtin print_string
+# assignment
+load r0, 0
+load r1, 1
+add_int r0, r0, r1
+store 2, r0
+# write
+string_const r0, "The result is: "
+call_builtin print_string
+# write
+load r0, 2
+call_builtin print_int
+# write
+string_const r0, "\n"
+call_builtin print_string
+# epilogue
+pop_stack_frame 3
+return
+proc_test_ref:
+# prologue
+push_stack_frame 2
+store 0, r0
+store 1, r1
+# assignment
+load r0, 1
+load_indirect r0, r0
+int_const r1, 2
+mul_int r0, r0, r1
+load r1, 1
+store_indirect r1, r0
+# assignment
+load r0, 0
+load_indirect r0, r0
+load r1, 1
+load_indirect r1, r1
+mul_int r0, r0, r1
+load r1, 0
+store_indirect r1, r0
+# epilogue
+pop_stack_frame 2
+return
+proc_main:
+# prologue
+push_stack_frame 2
+# variable declarations
+int_const r0, 0
+store 0, r0
+int_const r0, 0
+store 1, r0
+# assignment
+int_const r0, 3
+store 0, r0
+# assignment
+int_const r0, 2
+store 1, r0
+# call
+load_address r0, 0
+load_address r1, 1
+call proc_test_ref
+# call
+int_const r0, 4
+load r1, 1
+call proc_assert_int
+# call
+int_const r0, 12
+load r1, 0
+call proc_assert_int
+# call
+int_const r0, 2
+real_const r1, 3.500000
+int_const r2, 1
+call proc_simple_declaration
+# call
+call proc_array_process
+# call
+call proc_math_operation
+# call
+call proc_logic_operation
+# call
+call proc_if_else
+# call
+call proc_do_while
+# call
+call proc_read_inputs
+# epilogue
+pop_stack_frame 2
+return
+proc_assert_int:
+# prologue
+push_stack_frame 2
+store 0, r0
+store 1, r1
+# write
+string_const r0, "The expecting value is:"
+call_builtin print_string
+# write
+load r0, 0
+call_builtin print_int
+# write
+string_const r0, " , Result:"
+call_builtin print_string
+# write
+load r0, 1
+call_builtin print_int
+# write
+string_const r0, "\n"
+call_builtin print_string
+# epilogue
+pop_stack_frame 2
+return
+proc_assert_float:
+# prologue
+push_stack_frame 2
+store 0, r0
+store 1, r1
+# write
+string_const r0, "The expecting value is:"
+call_builtin print_string
+# write
+load r0, 0
+call_builtin print_real
+# write
+string_const r0, " , Result:"
+call_builtin print_string
+# write
+load r0, 1
+call_builtin print_real
+# write
+string_const r0, "\n"
+call_builtin print_string
+# epilogue
+pop_stack_frame 2
+return
+proc_assert_bool:
+# prologue
+push_stack_frame 2
+store 0, r0
+store 1, r1
+# write
+string_const r0, "The expecting value is:"
+call_builtin print_string
+# call
+load r0, 0
+call proc_write_bool
+# write
+string_const r0, " , Result:"
+call_builtin print_string
+# call
+load r0, 1
+call proc_write_bool
+# write
+string_const r0, "\n"
+call_builtin print_string
+# epilogue
+pop_stack_frame 2
+return
+proc_write_bool:
+# prologue
+push_stack_frame 1
+store 0, r0
+# if
+load r0, 0
+int_const r1, 1
+cmp_eq_int r0, r0, r1
+branch_on_false r0, label6else
+# write
+string_const r0, "TRUE"
+call_builtin print_string
+branch_uncond label6after
+label6else:
+# write
+string_const r0, "FALSE"
+call_builtin print_string
+label6after:
+# epilogue
+pop_stack_frame 1
+return
